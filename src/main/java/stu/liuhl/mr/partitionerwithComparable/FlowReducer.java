@@ -8,6 +8,8 @@ import java.io.IOException;
 public class FlowReducer extends Reducer<FlowBean,Text,Text, FlowBean> {
     private Text outK = new Text();
     private FlowBean outV = new FlowBean();
+
+
     @Override
     protected void reduce(FlowBean key, Iterable<Text> values, Reducer<FlowBean, Text, Text, FlowBean>.Context context) throws IOException, InterruptedException {
         for (Text value : values) {
